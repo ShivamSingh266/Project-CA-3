@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Sign Up</h2>
+        <form onsubmit="return(sub())" name="myform">
+            <label for="username">Name:</label>
+            <input type="text" id="username" name="username" placeholder="Full Name">
+            <span class="error" id="usernameerror"></span>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Email-ID">
+            <span class="error" id="emailerror"></span>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Password">
+            <span class="error" id="passworderror"></span>
+
+            <label for="gender" class="lll">Gender:
+                <input type="radio" value="male" name="gender" id="male">Male
+                <input type="radio" value="female" name="gender" id="female">Female
+                <input type="radio" value="other" name="gender" id="other">Other
+                <span class="error" id="gendererror"></span>
+            </label>
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" placeholder="City">
+            <span class="error" id="cityerror"></span>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="4" placeholder="Write Your Address!"></textarea>
+            <span class="error" id="textareaerror"></span>
+
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="login.html">Login</a></p>
+    </div>
+    <script>
+        function sub() {
+            var isvalid = true;
+            if (document.getElementById('username').value == "") {
+                document.getElementById('usernameerror').innerText = "Please fill out this field"
+                isvalid = false;
+            }
+            else {
+                document.getElementById('usernameerror').innerText = "";
+            }
+            if (document.getElementById('email').value == "") {
+                document.getElementById('emailerror').innerText = "Please fill out this field"
+                isvalid = false;
+            }
+            else {
+                document.getElementById('emailerror').innerText = "";
+            }
+            if (document.getElementById('password').value == "") {
+                document.getElementById('passworderror').innerText = "Please fill out this field"
+                isvalid = false;
+            }
+            else {
+                document.getElementById('passworderror').innerText = "";
+            }
+            if (document.myform.gender.value == "") {
+                document.getElementById('gendererror').innerText = "Please fill out this field"
+                isvalid = false;
+            }
+            else {
+                document.getElementById('gendererror').innerText = "";
+            }
+            if (document.getElementById('city').value == "") {
+                document.getElementById('cityerror').innerText = "Please fill out this field"
+                isvalid = false;
+            }
+            else {
+                document.getElementById('cityerror').innerText = "";
+            }
+            if (document.getElementById('address').value == "") {
+                document.getElementById('textareaerror').innerText = "Please fill out this field"
+                isvalid = false;
+            }
+            else {
+                document.getElementById('textareaerror').innerText = "";
+            }
+            return isvalid;
+        }
+    </script>
+</body>
+
+</html>

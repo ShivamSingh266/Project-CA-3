@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Login</h2>
+        <form onsubmit="return(sub())" name="myform">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Full Name">
+            <span class="error" id="usernameerror"></span>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Password">
+            <span class="error" id="passworderror"></span>
+
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+    </div>
+    <script>
+        function sub(){
+            var isvalid = true;
+            if (document.getElementById('username').value==""){
+                document.getElementById('usernameerror').innerText = "Please fill out this field"
+                isvalid = false;
+            }
+            else{
+                document.getElementById('usernameerror').innerText = "";
+            }
+            if (document.getElementById('password').value==""){
+                document.getElementById('passworderror').innerText = "Please fill out this field"
+                isvalid = false;
+            }
+            else{
+                document.getElementById('passworderror').innerText = "";
+            }
+            return isvalid
+        }
+    </script>
+</body>
+
+</html>
